@@ -13,12 +13,17 @@ export async function getStaticProps() {
 
 export default ({ posts }: { posts: Post[] }) => {
   const [freeWords, setFreeWords] = useState('')
+  const [orderKey, setOrderKey] = useState('stars')
 
   function changeFreeWords(e: ChangeEvent<HTMLInputElement>) {
     setFreeWords(e.target.value)
   }
 
-  const referdPosts = posts.filter((post) => {
+  function changeOrderKey(e: ChangeEvent<HTMLSelectElement>) {
+    setOrderKey(e.target.value)
+  }
+
+  const searchedPosts = posts.filter((post) => {
     let res = true
 
     // フリーワード
@@ -36,10 +41,40 @@ export default ({ posts }: { posts: Post[] }) => {
     return res
   })
 
+  const sortedPost = searchedPosts.sort((l, r) => {
+    if (orderKey === 'stars') {
+      if (l.stars > r.stars) return -1
+      if (l.stars < r.stars) return 1
+      if (Date.parse(l.beginning_time) > Date.parse(r.beginning_time))
+        return -1
+      if (Date.parse(l.beginning_time) < Date.parse(r.beginning_time))
+        return 1
+      return 0
+    }
+    if (orderKey === 'new') {
+      if (Date.parse(l.beginning_time) > Date.parse(r.beginning_time))
+        return -1
+      if (Date.parse(l.beginning_time) < Date.parse(r.beginning_time))
+        return 1
+      if (l.stars > r.stars) return -1
+      if (l.stars < r.stars) return 1
+      return 0
+    }
+    if (orderKey === 'old') {
+      if (Date.parse(l.beginning_time) > Date.parse(r.beginning_time))
+        return 1
+      if (Date.parse(l.beginning_time) < Date.parse(r.beginning_time))
+        return -1
+      if (l.stars > r.stars) return -1
+      if (l.stars < r.stars) return 1
+      return 0
+    }
+    return 0
+  })
+
   return (
     <div>
       <Top />
-
       <div>
         <div>
           <div className='row'>
@@ -53,21 +88,25 @@ export default ({ posts }: { posts: Post[] }) => {
               ></input>
             </div>
           </div>
+          <ul>
+            <li>カテゴリ</li>
+            <li>タグ</li>
+            <li>期間</li>
+          </ul>
         </div>
-        <ul>
-          <li>カテゴリ</li>
-          <li>タグ</li>
-          <li>期間</li>
-        </ul>
-        <ul>
-          <li>おすすめ度順</li>
-          <li>新しい方から</li>
-          <li>古い方から</li>
-        </ul>
+        <div>
+          <select
+            id='selectOrderKey'
+            defaultValue='star'
+            onChange={(e) => changeOrderKey(e)}
+          >
+            <option value='stars'>おすすめな方から</option>
+            <option value='new'>新しい方から</option>
+            <option value='old'>古い方から</option>
+          </select>
+        </div>
       </div>
-      <div>
-        <PostsHtml posts={referdPosts} />
-      </div>
+      <PostsHtml posts={sortedPost} />
     </div>
   )
 }
@@ -88,7 +127,7 @@ function Top() {
 
 function PostsHtml({ posts }: { posts: Post[] }) {
   return (
-    <>
+    <div>
       {posts.map((post) => {
         return (
           <Link href={`/posts/${post.postId}`}>
@@ -103,6 +142,6 @@ function PostsHtml({ posts }: { posts: Post[] }) {
           </Link>
         )
       })}
-    </>
+    </div>
   )
 }
