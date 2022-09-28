@@ -11,6 +11,7 @@ export interface Post {
   contentHtml: string
   title?: string
   description?: string
+  stars?: number
   category?: string
   tags?: string[]
   beginning_time?: string
@@ -45,4 +46,13 @@ export async function getPost(postId: string): Promise<Post> {
     contentHtml,
     ...matterResult.data,
   }
+}
+
+export async function getAllPosts(): Promise<Post[]> {
+  const postIds = getAllPostIds()
+  let posts: Post[] = []
+  for (const postId of postIds) {
+    posts.push(await getPost(postId.params.postId))
+  }
+  return posts
 }

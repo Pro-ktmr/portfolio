@@ -32,6 +32,7 @@ export default ({ post }: { post: Post }) => {
           </li>
           <li>カテゴリ：{post.category}</li>
           <li>タグ：{post.tags.join(', ')}</li>
+          <li>おすすめ度：{post.stars}</li>
         </ul>
         <div dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
         <ul>
