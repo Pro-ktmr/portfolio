@@ -1,7 +1,7 @@
 {
     "editor.formatOnSave": true,
     "editor.formatOnType": true,
-    "editor.formatOnPaste": true,
+    "editor.formatOnPaste": false,
     "editor.tabSize": 2,
     "files.insertFinalNewline": true,
     "prettier.singleQuote": true,
