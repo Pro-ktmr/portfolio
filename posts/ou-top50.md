@@ -6,6 +6,7 @@ category: '学業'
 tags: ['表彰']
 beginning_time: '2021-12-17'
 ending_time: '2021-12-17'
+eye_catch: 'https://www.celas.osaka-u.ac.jp/wp-content/uploads/celas/2021/r03_prize_1.jpg'
 created_at: '2022-09-28'
 updated_at: '2022-09-28'
 ---

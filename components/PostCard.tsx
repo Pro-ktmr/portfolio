@@ -8,8 +8,20 @@ export default ({ post }: { post: Post }): JSX.Element => {
     <Link href={`/posts/${post.postId}`} key={post.postId}>
       <a className={styles.outer}>
         <div className={styles.card}>
-          <div className={styles.image}>
+          <div className={styles.eye_catch}>
             <div className={styles.altCategory}>{post.category}</div>
+            {post.eye_catch !== null ? (
+              <img
+                className={styles.image}
+                src={post.eye_catch}
+                alt={post.description}
+                onError={(e) => {
+                  ;(e.target as HTMLElement).style.display = 'none'
+                }}
+              ></img>
+            ) : (
+              <></>
+            )}
           </div>
           <div className={styles.body}>
             <h3 className={styles.title}>{post.title}</h3>

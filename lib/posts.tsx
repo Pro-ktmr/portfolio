@@ -16,6 +16,7 @@ export interface Post {
   tags?: string[]
   beginning_time?: string
   ending_time?: string | null
+  eye_catch?: string | null
   created_at?: string
   updated_at?: string
 }

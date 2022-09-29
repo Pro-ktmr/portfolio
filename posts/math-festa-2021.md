@@ -6,6 +6,7 @@ category: '社会貢献活動'
 tags: ['研究発表', '指導助言']
 beginning_time: '2021-12-25'
 ending_time: '2021-12-25'
+eye_catch: null
 created_at: '2022-09-28'
 updated_at: '2022-09-28'
 ---
