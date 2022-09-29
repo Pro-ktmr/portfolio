@@ -1,0 +1,112 @@
+.outer {
+  display: block;
+  text-decoration: none;
+  max-width: 60rem;
+}
+
+.card {
+  display: flex;
+  box-shadow: 0 0 0.2rem var(--text-color);
+  margin: 1rem 0;
+  border-radius: 0.3rem;
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 2rem;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 0 0.4rem var(--text-color);
+}
+
+.image {
+  position: relative;
+  width: 16rem;
+  background-color: var(--accent-color);
+}
+
+.altCategory {
+  position: absolute;
+  color: var(--background-color);
+  width: 100%;
+  height: 1rem;
+  text-align: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  line-height: 1rem;
+  font-size: 2rem;
+}
+
+.body {
+  padding: 2rem;
+  width: calc(100% - 16rem);
+}
+
+@media (max-width: 640px) {
+  .card {
+    display: block;
+  }
+
+  .image {
+    width: 100%;
+    height: 16rem;
+  }
+
+  .body {
+    width: 100%;
+  }
+}
+
+.title {
+  font-size: 2rem;
+  margin: 0 0 0.6rem 0;
+  color: var(--accent-color);
+}
+
+.stars span {
+  font-size: 1.2rem;
+  margin: 0 0.02rem;
+}
+
+.stars .yellow {
+  color: #ffb448;
+}
+
+.stars .gray {
+  color: #e1e1e1;
+}
+
+.description {
+  margin: 1rem 0;
+}
+
+.information {
+  overflow: hidden;
+}
+
+.badge {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.2rem;
+  margin: 0 0.3rem;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.category {
+  background-color: var(--accent-color);
+}
+
+.tag {
+  background-color: var(--base-color);
+  color: var(--text-color);
+}
+
+.duration {
+  float: right;
+  color: #888888;
+}

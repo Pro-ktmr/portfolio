@@ -1,0 +1,13 @@
+:root {
+  --text-color: #282828;
+  --base-color: #e3d7ff;
+  --main-color: #b698ff;
+  --accent-color: #8858ff;
+  --background-color: #ffffff;
+}
+
+html {
+  padding: 16px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}

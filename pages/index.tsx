@@ -4,9 +4,9 @@ import {
   getAllCategories,
   getAllTags,
 } from '../lib/posts'
-import Link from 'next/link'
 import { useState, ChangeEvent } from 'react'
 import { parseAsDate } from '../lib/time'
+import PostCard from '../components/PostCard'
 
 export async function getStaticProps() {
   const posts = await getAllPosts()
@@ -216,7 +216,11 @@ export default ({
           </select>
         </div>
       </div>
-      <PostsHtml posts={sortedPost} />
+      <div>
+        {sortedPost.map((post) => {
+          return <PostCard key={post.postId} post={post} />
+        })}
+      </div>
     </div>
   )
 }
@@ -231,31 +235,6 @@ function Top() {
         </ruby>
         」
       </h1>
-    </div>
-  )
-}
-
-function PostsHtml({ posts }: { posts: Post[] }) {
-  return (
-    <div>
-      {posts.map((post) => {
-        return (
-          <Link href={`/posts/${post.postId}`} key={post.postId}>
-            <a>
-              <div>
-                <h3>{post.title}</h3>
-                <div>{post.stars}</div>
-                <div>
-                  {post.beginning_time} ～ {post.ending_time}
-                </div>
-                <div>{post.description}</div>
-                <div>{post.category}</div>
-                <div>{post.tags.join(', ')}</div>
-              </div>
-            </a>
-          </Link>
-        )
-      })}
     </div>
   )
 }
