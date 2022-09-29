@@ -135,7 +135,7 @@ export default ({
             <div className='col'>
               {allCategories.map((category) => {
                 return (
-                  <div>
+                  <div key={category}>
                     <input
                       type='checkbox'
                       id={`inputCategory_${category}`}
@@ -156,7 +156,7 @@ export default ({
             <div className='col'>
               {allTags.map((tag) => {
                 return (
-                  <div>
+                  <div key={tag}>
                     <input
                       type='checkbox'
                       id={`inputTag_${tag}`}
@@ -211,7 +211,7 @@ function PostsHtml({ posts }: { posts: Post[] }) {
     <div>
       {posts.map((post) => {
         return (
-          <Link href={`/posts/${post.postId}`}>
+          <Link href={`/posts/${post.postId}`} key={post.postId}>
             <a>
               <div>
                 <h3>{post.title}</h3>
