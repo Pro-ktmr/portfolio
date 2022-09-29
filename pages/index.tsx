@@ -6,6 +6,7 @@ import {
 } from '../lib/posts'
 import Link from 'next/link'
 import { useState, ChangeEvent } from 'react'
+import { parseAsDate } from '../lib/time'
 
 export async function getStaticProps() {
   const posts = await getAllPosts()
@@ -33,6 +34,7 @@ export default ({
   const [orderKey, setOrderKey] = useState('stars')
   const [categories, setCategories] = useState(allCategories)
   const [tags, setTags] = useState(allTags)
+  const [duration, setDuration] = useState('2000-01-01 3000-01-01')
 
   function changeFreeWords(e: ChangeEvent<HTMLInputElement>) {
     setFreeWords(e.target.value)
@@ -59,6 +61,10 @@ export default ({
     setTags(tmpTags)
   }
 
+  function changeDuration(e: ChangeEvent<HTMLSelectElement>) {
+    setDuration(e.target.value)
+  }
+
   const searchedPosts = posts.filter((post) => {
     let res = true
 
@@ -79,6 +85,15 @@ export default ({
 
     // タグ
     res &&= post.tags.map((tag) => tags.includes(tag)).includes(true)
+
+    // 期間
+    const searched_beginning_time = parseAsDate(
+      duration.split(' ')[0]
+    )
+    const searched_ending_time = parseAsDate(duration.split(' ')[1])
+    res &&=
+      searched_beginning_time <= parseAsDate(post.ending_time) &&
+      parseAsDate(post.beginning_time) <= searched_ending_time
 
     return res
   })
@@ -120,10 +135,10 @@ export default ({
       <div>
         <div>
           <div className='row'>
-            <div className='col'>
+            <div className='colLeft'>
               <label htmlFor='inputFreeWords'>フリーワード</label>
             </div>
-            <div className='col'>
+            <div className='colRight'>
               <input
                 id='inputFreeWords'
                 onChange={(e) => changeFreeWords(e)}
@@ -131,8 +146,8 @@ export default ({
             </div>
           </div>
           <div className='row'>
-            <div className='col'>カテゴリ</div>
-            <div className='col'>
+            <div className='colLeft'>カテゴリ</div>
+            <div className='colRight'>
               {allCategories.map((category) => {
                 return (
                   <div key={category}>
@@ -152,8 +167,8 @@ export default ({
             </div>
           </div>
           <div className='row'>
-            <div className='col'>タグ</div>
-            <div className='col'>
+            <div className='colLeft'>タグ</div>
+            <div className='colRight'>
               {allTags.map((tag) => {
                 return (
                   <div key={tag}>
@@ -171,8 +186,22 @@ export default ({
             </div>
           </div>
           <div className='row'>
-            <div className='col'>期間</div>
-            <div className='col'></div>
+            <div className='colLeft'>期間</div>
+            <div className='colRight'>
+              <select
+                id='selectDuration'
+                defaultValue='2000-01-01 3000-01-01'
+                onChange={(e) => changeDuration(e)}
+              >
+                <option value='2000-01-01 3000-01-01'>すべて</option>
+                <option value='2017-04-01 2020-03-31'>
+                  高校時代 (2017 年 4 月 ～ 2020 年 3 月)
+                </option>
+                <option value='2020-04-01 2023-03-31'>
+                  大学時代 (2020 年 4 月 ～)
+                </option>
+              </select>
+            </div>
           </div>
         </div>
         <div>
