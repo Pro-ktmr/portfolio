@@ -53,7 +53,7 @@
   margin: auto;
   line-height: 1rem;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .body {
@@ -78,7 +78,7 @@
 
 .title {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0 0 0.6rem 0;
   color: var(--accent-color);
 }
@@ -97,7 +97,8 @@
 }
 
 .description {
-  margin: 1rem 0;
+  margin: 1.6rem 0;
+  line-height: 1.8rem;
 }
 
 .information {
