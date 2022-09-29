@@ -15,9 +15,22 @@ export interface Post {
   category?: string
   tags?: string[]
   beginning_time?: string
-  ending_time?: string
+  ending_time?: string | null
   created_at?: string
   updated_at?: string
+}
+
+export function getAllCategories() {
+  return ['研究', '学業', '社会貢献活動']
+}
+
+export async function getAllTags() {
+  let res: string[] = []
+  const posts = await getAllPosts()
+  for (const post of posts) {
+    res = res.concat(post.tags)
+  }
+  return res
 }
 
 export function getAllPostIds() {
