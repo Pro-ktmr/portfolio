@@ -1,0 +1,128 @@
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.searchBox {
+  background-color: var(--base-color);
+  border-radius: 0.3rem;
+  padding: 1.4rem 2rem;
+}
+
+.row {
+  padding: 1rem;
+  background-color: var(--base-color);
+  border-radius: 0.3rem;
+}
+
+.colLeft {
+  font-weight: 700;
+}
+
+.colRight {
+  margin-top: 1rem;
+}
+
+.plainText {
+  width: 100%;
+  line-height: 1.5rem;
+  padding: 0.4rem 0.6rem;
+  border: 0.1rem solid #c0c0c0;
+  border-radius: 0.25rem;
+}
+
+.checkInline {
+  display: inline-block;
+  margin-right: 1.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.checkInline label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkBox {
+  margin: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.dummyCheckBox {
+  position: relative;
+  top: 0;
+  left: 0;
+  display: inline-block;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: solid 0.1rem transparent;
+  background: var(--text-color);
+  opacity: 0.1;
+  border-radius: 0.25rem;
+}
+
+.checkInline:hover .dummyCheckBox {
+  opacity: 0.18;
+}
+
+.checkInline:hover .checkBox:checked + .dummyCheckBox {
+  opacity: 0.7;
+}
+
+.checkBox:checked + .dummyCheckBox {
+  opacity: 0.9;
+}
+
+.dummyCheckBox::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 4px;
+  border-radius: 2px;
+  transform: translate(-6px, 5px) rotateZ(-135deg);
+  transform-origin: 2px 2px;
+  background: #ffffff;
+}
+
+.dummyCheckBox::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 76%;
+  height: 4px;
+  border-radius: 2px;
+  transform: translate(-6px, 5px) rotateZ(-45deg);
+  transform-origin: 2px 2px;
+  background: #ffffff;
+}
+
+.labelBody {
+  display: inline-block;
+  line-height: 1.8rem;
+  height: 1.8rem;
+  margin-left: 0.6rem;
+}
+
+.select {
+  width: 100%;
+  line-height: 1.5rem;
+  padding: 0.25rem 0.6rem;
+  border: 0.1rem solid #c0c0c0;
+  border-radius: 0.25rem;
+}
+
+.order {
+  text-align: right;
+  margin: 4rem 0 2rem;
+  font-size: 1.2rem;
+}
+
+.order .select {
+  width: fit-content;
+}

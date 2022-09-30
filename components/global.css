@@ -9,7 +9,6 @@
 }
 
 body {
-  padding: 16px;
   color: var(--text-color);
   background-color: var(--background-color);
   font-family: 'M PLUS 2', sans-serif;

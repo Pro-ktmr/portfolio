@@ -6,7 +6,9 @@ import {
 } from '../lib/posts'
 import { useState, ChangeEvent } from 'react'
 import { parseAsDate } from '../lib/time'
+import Top from '../components/Top'
 import PostCard from '../components/PostCard'
+import styles from '../components/index.module.css'
 
 export async function getStaticProps() {
   const posts = await getAllPosts()
@@ -132,66 +134,76 @@ export default ({
   return (
     <div>
       <Top />
-      <div>
-        <div>
-          <div className='row'>
-            <div className='colLeft'>
+      <div className={styles.container}>
+        <div className={styles.searchBox}>
+          <div className={styles.row}>
+            <div className={styles.colLeft}>
               <label htmlFor='inputFreeWords'>フリーワード</label>
             </div>
-            <div className='colRight'>
+            <div className={styles.colRight}>
               <input
                 id='inputFreeWords'
                 onChange={(e) => changeFreeWords(e)}
+                className={styles.plainText}
               ></input>
             </div>
           </div>
-          <div className='row'>
-            <div className='colLeft'>カテゴリ</div>
-            <div className='colRight'>
+          <div className={styles.row}>
+            <div className={styles.colLeft}>カテゴリ</div>
+            <div className={styles.colRight}>
               {allCategories.map((category) => {
                 return (
-                  <div key={category}>
-                    <input
-                      type='checkbox'
-                      id={`inputCategory_${category}`}
-                      value={category}
-                      onChange={(e) => changeCategories(e)}
-                      defaultChecked={true}
-                    />
+                  <div key={category} className={styles.checkInline}>
                     <label htmlFor={`inputCategory_${category}`}>
-                      {category}
+                      <input
+                        type='checkbox'
+                        id={`inputCategory_${category}`}
+                        value={category}
+                        onChange={(e) => changeCategories(e)}
+                        defaultChecked={true}
+                        className={styles.checkBox}
+                      />
+                      <span className={styles.dummyCheckBox}></span>
+                      <span className={styles.labelBody}>
+                        {category}
+                      </span>
                     </label>
                   </div>
                 )
               })}
             </div>
           </div>
-          <div className='row'>
-            <div className='colLeft'>タグ</div>
-            <div className='colRight'>
+          <div className={styles.row}>
+            <div className={styles.colLeft}>タグ</div>
+            <div className={styles.colRight}>
               {allTags.map((tag) => {
                 return (
-                  <div key={tag}>
-                    <input
-                      type='checkbox'
-                      id={`inputTag_${tag}`}
-                      value={tag}
-                      onChange={(e) => changeTags(e)}
-                      defaultChecked={true}
-                    />
-                    <label htmlFor={`inputTag_${tag}`}>{tag}</label>
+                  <div key={tag} className={styles.checkInline}>
+                    <label htmlFor={`inputTag_${tag}`}>
+                      <input
+                        type='checkbox'
+                        id={`inputTag_${tag}`}
+                        value={tag}
+                        onChange={(e) => changeTags(e)}
+                        defaultChecked={true}
+                        className={styles.checkBox}
+                      />
+                      <span className={styles.dummyCheckBox}></span>
+                      <span className={styles.labelBody}>{tag}</span>
+                    </label>
                   </div>
                 )
               })}
             </div>
           </div>
-          <div className='row'>
-            <div className='colLeft'>期間</div>
-            <div className='colRight'>
+          <div className={styles.row}>
+            <div className={styles.colLeft}>期間</div>
+            <div className={styles.colRight}>
               <select
                 id='selectDuration'
                 defaultValue='2000-01-01 3000-01-01'
                 onChange={(e) => changeDuration(e)}
+                className={styles.select}
               >
                 <option value='2000-01-01 3000-01-01'>すべて</option>
                 <option value='2017-04-01 2020-03-31'>
@@ -204,37 +216,24 @@ export default ({
             </div>
           </div>
         </div>
-        <div>
+        <div className={styles.order}>
           <select
             id='selectOrderKey'
             defaultValue='star'
             onChange={(e) => changeOrderKey(e)}
+            className={styles.select}
           >
             <option value='stars'>おすすめな方から</option>
             <option value='new'>新しい方から</option>
             <option value='old'>古い方から</option>
           </select>
         </div>
+        <div className={styles.posts}>
+          {sortedPost.map((post) => {
+            return <PostCard key={post.postId} post={post} />
+          })}
+        </div>
       </div>
-      <div>
-        {sortedPost.map((post) => {
-          return <PostCard key={post.postId} post={post} />
-        })}
-      </div>
-    </div>
-  )
-}
-
-function Top() {
-  return (
-    <div>
-      <h1>
-        サーチできるポートフォリオ「
-        <ruby>
-          幸<rt>さち</rt>
-        </ruby>
-        」
-      </h1>
     </div>
   )
 }

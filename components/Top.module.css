@@ -1,0 +1,23 @@
+.top {
+  background-color: var(--accent-color);
+  margin-bottom: 3rem;
+  padding: 8rem 1rem;
+}
+
+.top h1 {
+  margin: 0;
+  font-size: 2.6rem;
+  text-align: center;
+  color: var(--background-color);
+  line-height: 100%;
+}
+
+.nobreak {
+  white-space: nowrap;
+}
+
+.satch {
+  display: block;
+  font-size: 5rem;
+  margin-top: 2rem;
+}
