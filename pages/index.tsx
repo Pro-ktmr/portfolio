@@ -1,10 +1,11 @@
+import Head from 'next/head'
+import { useState, ChangeEvent } from 'react'
 import {
   Post,
   getAllPosts,
   getAllCategories,
   getAllTags,
 } from '../lib/posts'
-import { useState, ChangeEvent } from 'react'
 import { parseAsDate } from '../lib/time'
 import Top from '../components/Top'
 import PostCard from '../components/PostCard'
@@ -86,7 +87,9 @@ export default ({
     res &&= categories.includes(post.category)
 
     // タグ
-    res &&= post.tags.map((tag) => tags.includes(tag)).includes(true)
+    res &&=
+      post.tags.map((tag) => tags.includes(tag)).includes(true) ||
+      post.tags.length == 0
 
     // 期間
     const searched_beginning_time = parseAsDate(
@@ -133,6 +136,9 @@ export default ({
 
   return (
     <div>
+      <Head>
+        <title>サーチできるポートフォリオ「幸」</title>
+      </Head>
       <Top />
       <div className={styles.container}>
         <div className={styles.searchBox}>

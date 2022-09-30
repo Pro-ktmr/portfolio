@@ -3,7 +3,7 @@ title: 'マスフェスタ 2021'
 description: '全国数学生徒研究発表会「マスフェスタ」に参加し，発表生徒に対して指導助言を行いました．'
 stars: 1
 category: '社会貢献活動'
-tags: ['研究発表', '指導助言']
+tags: []
 beginning_time: '2021-12-25'
 ending_time: '2021-12-25'
 eye_catch: null
