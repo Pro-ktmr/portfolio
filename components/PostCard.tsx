@@ -60,21 +60,22 @@ export default ({ post }: { post: Post }): JSX.Element => {
 }
 
 function Stars({ stars }: { stars: number }): JSX.Element {
-  const star = '★'
   const yellowStars = new Array<string>(stars).fill('')
   const grayStars = new Array<string>(5 - stars).fill('')
 
   return (
     <span className={styles.stars}>
       {yellowStars.map((_, i) => (
-        <span className={styles.yellow} key={i}>
-          {star}
-        </span>
+        <span
+          className={`${styles.star} ${styles.yellow}`}
+          key={i}
+        ></span>
       ))}
       {grayStars.map((_, i) => (
-        <span className={styles.gray} key={i}>
-          {star}
-        </span>
+        <span
+          className={`${styles.star} ${styles.gray}`}
+          key={i}
+        ></span>
       ))}
     </span>
   )

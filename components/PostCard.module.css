@@ -83,17 +83,31 @@
   color: var(--accent-color);
 }
 
-.stars span {
-  font-size: 1.2rem;
-  margin: 0 0.02rem;
+.star {
+  display: inline-block;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: var(--text-color);
+  clip-path: polygon(
+    50% 5%,
+    61% 40%,
+    98% 40%,
+    68% 62%,
+    79% 96%,
+    50% 75%,
+    21% 96%,
+    32% 62%,
+    2% 40%,
+    39% 40%
+  );
 }
 
-.stars .yellow {
-  color: #ffb448;
+.yellow {
+  background: #ffb448;
 }
 
-.stars .gray {
-  color: #e1e1e1;
+.gray {
+  background: #e1e1e1;
 }
 
 .description {
