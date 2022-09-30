@@ -6,7 +6,7 @@ category: '学業'
 tags: []
 beginning_time: '2017-09-16'
 ending_time: '2018-02-18'
-eye_catch: null
+eye_catch: 'https://www.kyoto-u.ac.jp/sites/default/files/embed/jaadmissionsevents_newsdepartmentgakusainews2017images170705_101.jpg'
 created_at: '2022-09-30'
 updated_at: '2022-09-30'
 ---
