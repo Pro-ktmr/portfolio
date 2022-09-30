@@ -32,19 +32,10 @@ export default ({ post }: { post: Post }): JSX.Element => {
               {post.description}
             </div>
             <div className={styles.information}>
-              <span className={`${styles.badge} ${styles.category}`}>
-                {post.category}
-              </span>
-              {post.tags.map((tag) => {
-                return (
-                  <span
-                    className={`${styles.badge} ${styles.tag}`}
-                    key={tag}
-                  >
-                    {tag}
-                  </span>
-                )
-              })}
+              <CategoryAndTags
+                category={post.category}
+                tags={post.tags}
+              />
               <div className={styles.duration}>
                 {renderDuration(
                   post.beginning_time,
@@ -59,7 +50,7 @@ export default ({ post }: { post: Post }): JSX.Element => {
   )
 }
 
-function Stars({ stars }: { stars: number }): JSX.Element {
+export function Stars({ stars }: { stars: number }): JSX.Element {
   const yellowStars = new Array<string>(stars).fill('')
   const grayStars = new Array<string>(5 - stars).fill('')
 
@@ -78,5 +69,28 @@ function Stars({ stars }: { stars: number }): JSX.Element {
         ></span>
       ))}
     </span>
+  )
+}
+
+export function CategoryAndTags({
+  category,
+  tags,
+}: {
+  category: string
+  tags: string[]
+}): JSX.Element {
+  return (
+    <>
+      <span className={`${styles.badge} ${styles.category}`}>
+        {category}
+      </span>
+      {tags.map((tag) => {
+        return (
+          <span className={`${styles.badge} ${styles.tag}`} key={tag}>
+            {tag}
+          </span>
+        )
+      })}
+    </>
   )
 }

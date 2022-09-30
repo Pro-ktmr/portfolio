@@ -1,0 +1,84 @@
+.topNav {
+  background: var(--accent-color);
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+}
+
+.topNav a {
+  color: var(--background-color);
+  text-decoration: none;
+}
+
+.container {
+  display: block;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.title {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: var(--accent-color);
+  border-left: 1.6rem solid var(--accent-color);
+  padding: 0.8rem 0 0.8rem 1.6rem;
+}
+
+.badges {
+  margin: 2rem 0;
+}
+
+.duration {
+  float: right;
+  color: #888888;
+}
+
+.content {
+  background-color: var(--base-color);
+  padding: 2.4rem;
+  border-radius: 0.4rem;
+  line-height: 2rem;
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.postInfo {
+  color: #888888;
+  float: right;
+  line-height: 100%;
+  margin: 2rem 0;
+}
+
+.postInfo .row .colLeft {
+  margin: 0.4rem 0;
+}
+
+.postInfo .row .colLeft {
+  display: inline-block;
+  margin-right: 0.8rem;
+}
+
+.postInfo .row .colRight {
+  display: inline-block;
+}
+
+.backNav {
+  max-width: 60rem;
+  margin: 2rem auto;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+
+.backNav a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.backNav a:hover {
+  text-decoration: none;
+  color: #888888;
+}

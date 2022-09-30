@@ -19,9 +19,13 @@ export function renderDuration(
 export function renderTime(time: string): string {
   let res
   res = /^(\d{4})$/.exec(time)
-  if (res !== null) return `${res[1]} 年`
+  if (res !== null) return `${parseInt(res[1])} 年`
   res = /^(\d{4})-(\d{2})$/.exec(time)
-  if (res !== null) return `${res[1]} 年 ${res[2]} 月`
+  if (res !== null)
+    return `${parseInt(res[1])} 年 ${parseInt(res[2])} 月`
   res = /^(\d{4})-(\d{2})-(\d{2})$/.exec(time)
-  if (res !== null) return `${res[1]} 年 ${res[2]} 月 ${res[3]} 日`
+  if (res !== null)
+    return `${parseInt(res[1])} 年 ${parseInt(res[2])} 月 ${parseInt(
+      res[3]
+    )} 日`
 }
