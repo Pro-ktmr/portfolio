@@ -3,7 +3,7 @@ title: '京都大学 ELCAS 2018 (ロボットシステムの組込みプログ�
 description: '京都大学が実施する高校生向けのプログラム「ELCAS」に参加し，「ロボットシステムの組込みプログラミング」の実習に取り組みました．'
 stars: 3
 category: '学業'
-tags: []
+tags: ['プログラミング']
 beginning_time: '2018-10-06'
 ending_time: '2019-01-13'
 eye_catch: 'https://www.kyoto-u.ac.jp/sites/default/files/embed/jaadmissionsevents_newsdepartmentkodai-renkei-nyushi-centernews2018images180704_1elcas-flyer_web.jpg'

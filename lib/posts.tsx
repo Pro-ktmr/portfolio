@@ -23,7 +23,7 @@ export interface Post {
 }
 
 export function getAllCategories() {
-  return ['研究', '学業', '社会貢献活動']
+  return ['研究', '学業', '社会貢献活動', 'イベント参加']
 }
 
 export async function getAllTags() {
@@ -32,6 +32,10 @@ export async function getAllTags() {
   for (const post of posts) {
     res = res.concat(post.tags)
   }
+  res = res.filter(
+    (item, index, self) => self.indexOf(item) === index
+  )
+  res = res.sort()
   return res
 }
 
