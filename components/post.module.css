@@ -48,6 +48,8 @@
 
 .content img {
   max-width: 100%;
+  display: block;
+  margin: 1rem auto;
 }
 
 .content table {
