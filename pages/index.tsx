@@ -138,6 +138,10 @@ export default ({
     <div>
       <Head>
         <title>サーチできるポートフォリオ「幸」</title>
+        <meta
+          name='description'
+          content='実績や参加させていただいたイベントなどが多くなりすぎたため，検索して管理できるシステムを構築しました．'
+        />
       </Head>
       <Top />
       <div className={styles.container}>

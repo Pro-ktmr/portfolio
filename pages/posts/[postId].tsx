@@ -27,6 +27,7 @@ export default ({ post }: { post: Post }) => {
     <div>
       <Head>
         <title>{post.title}｜サーチできるポートフォリオ「幸」</title>
+        <meta name='description' content={post.description} />
       </Head>
       <div className={styles.topNav}>
         <Link href='/'>サーチできるポートフォリオ「幸」</Link>
