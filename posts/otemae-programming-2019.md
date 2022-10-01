@@ -4,8 +4,8 @@ description: '大阪府立大手前高等学校で開催された「SSH プロ�
 stars: 2
 category: '社会貢献活動'
 tags: ['プログラミング', 'C++']
-beginning_time: '2018-08-04'
-ending_time: '2018-08-04'
+beginning_time: '2019-08-01'
+ending_time: '2019-08-03'
 eye_catch: 'https://otemae-hs.ed.jp/otemae_wp/wp-content/uploads/2019/06/programming2019-860x525.png'
 created_at: '2022-09-30'
 updated_at: '2022-09-30'
