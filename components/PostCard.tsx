@@ -18,12 +18,7 @@ export default ({
       href={{ pathname: `/posts/${post.postId}`, query: query }}
       key={post.postId}
     >
-      <a
-        className={styles.outer}
-        onClick={() => {
-          router.push({ pathname: '/', query: query })
-        }}
-      >
+      <a className={styles.outer} id={post.postId}>
         <div className={styles.card}>
           <div className={styles.eye_catch}>
             <div className={styles.altCategory}>{post.category}</div>

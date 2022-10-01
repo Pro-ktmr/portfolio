@@ -15,15 +15,17 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const post = await getPost(params.postId)
+  const postId = params.postId
+  const post = await getPost(postId)
   return {
     props: {
+      postId,
       post,
     },
   }
 }
 
-export default ({ post }: { post: Post }) => {
+export default ({ postId, post }: { postId: string; post: Post }) => {
   const router = useRouter()
   const query = router.query
 
@@ -37,7 +39,9 @@ export default ({ post }: { post: Post }) => {
         <Link href='/'>サーチできるポートフォリオ「幸」</Link>
       </div>
       <div className={styles.backNav}>
-        <Link href={{ pathname: '/', query: query }}>
+        <Link
+          href={{ pathname: '/', hash: `#${postId}`, query: query }}
+        >
           ← 検索画面に戻る
         </Link>
       </div>
