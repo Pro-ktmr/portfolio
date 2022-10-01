@@ -1,4 +1,5 @@
 import { Post } from '../lib/posts'
+import { useRouter } from 'next/router'
 import { renderDuration } from '../lib/time'
 import Link from 'next/link'
 import styles from './PostCard.module.css'
@@ -6,16 +7,25 @@ import styles from './PostCard.module.css'
 export default ({
   post,
   query,
+  updateQuery,
 }: {
   post: Post
   query: any
+  updateQuery: any
 }): JSX.Element => {
+  const router = useRouter()
+
   return (
     <Link
       href={{ pathname: `/posts/${post.postId}`, query: query }}
       key={post.postId}
     >
-      <a className={styles.outer}>
+      <a
+        className={styles.outer}
+        onClick={() => {
+          router.push({ pathname: '/', query: query })
+        }}
+      >
         <div className={styles.card}>
           <div className={styles.eye_catch}>
             <div className={styles.altCategory}>{post.category}</div>

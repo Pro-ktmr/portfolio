@@ -78,7 +78,6 @@ function Main({
 
   function changeFreeWords(e: ChangeEvent<HTMLInputElement>) {
     setFreeWords(e.target.value)
-    updateQuery(e.target.value, categories, tags, duration, orderKey)
   }
 
   function changeCategories(e: ChangeEvent<HTMLInputElement>) {
@@ -89,7 +88,6 @@ function Main({
         (item) => item != e.target.value
       )
     setCategories(tmpCategories)
-    updateQuery(freeWords, tmpCategories, tags, duration, orderKey)
   }
 
   function changeTags(e: ChangeEvent<HTMLInputElement>) {
@@ -97,17 +95,14 @@ function Main({
     if (e.target.checked) tmpTags.push(e.target.value)
     else tmpTags = tmpTags.filter((item) => item != e.target.value)
     setTags(tmpTags)
-    updateQuery(freeWords, categories, tmpTags, duration, orderKey)
   }
 
   function changeDuration(e: ChangeEvent<HTMLSelectElement>) {
     setDuration(e.target.value)
-    updateQuery(freeWords, categories, tags, e.target.value, orderKey)
   }
 
   function changeOrderKey(e: ChangeEvent<HTMLSelectElement>) {
     setOrderKey(e.target.value)
-    updateQuery(freeWords, categories, tags, duration, e.target.value)
   }
 
   function makeQuery() {
@@ -127,7 +122,7 @@ function Main({
     duration,
     orderKey
   ) {
-    /*router.push({
+    router.push({
       pathname: '/',
       query: {
         freeWords: freeWords,
@@ -136,7 +131,7 @@ function Main({
         duration: duration,
         orderKey: orderKey,
       },
-    })*/
+    })
   }
 
   const searchedPosts = posts.filter((post) => {
