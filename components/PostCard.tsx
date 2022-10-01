@@ -7,11 +7,9 @@ import styles from './PostCard.module.css'
 export default ({
   post,
   query,
-  updateQuery,
 }: {
   post: Post
   query: any
-  updateQuery: any
 }): JSX.Element => {
   const router = useRouter()
 
