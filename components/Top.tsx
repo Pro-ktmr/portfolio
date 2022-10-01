@@ -14,6 +14,7 @@ export default () => {
           」
         </span>
       </h1>
+      <div className={styles.name}>― 北村 祐稀 ―</div>
     </div>
   )
 }

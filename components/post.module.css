@@ -26,6 +26,10 @@
   padding: 0.8rem 0 0.8rem 1.6rem;
 }
 
+.name {
+  color: #b0b0b0;
+}
+
 .badges {
   margin: 2rem 0;
 }

@@ -36,7 +36,12 @@ export default ({ postId, post }: { postId: string; post: Post }) => {
         <meta name='description' content={post.description} />
       </Head>
       <div className={styles.topNav}>
-        <Link href='/'>サーチできるポートフォリオ「幸」</Link>
+        <Link href='/'>
+          <a>
+            サーチできるポートフォリオ「幸」
+            <span className={styles.name}>― 北村 祐稀</span>
+          </a>
+        </Link>
       </div>
       <article className={styles.container}>
         <h1 className={styles.title}>{post.title}</h1>
