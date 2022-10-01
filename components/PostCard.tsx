@@ -3,9 +3,18 @@ import { renderDuration } from '../lib/time'
 import Link from 'next/link'
 import styles from './PostCard.module.css'
 
-export default ({ post }: { post: Post }): JSX.Element => {
+export default ({
+  post,
+  query,
+}: {
+  post: Post
+  query: any
+}): JSX.Element => {
   return (
-    <Link href={`/posts/${post.postId}`} key={post.postId}>
+    <Link
+      href={{ pathname: `/posts/${post.postId}`, query: query }}
+      key={post.postId}
+    >
       <a className={styles.outer}>
         <div className={styles.card}>
           <div className={styles.eye_catch}>

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 import { useState, ChangeEvent } from 'react'
 import {
   Post,
@@ -32,19 +33,52 @@ export default ({
   posts: Post[]
   allCategories: string[]
   allTags: string[]
-}) => {
-  const [freeWords, setFreeWords] = useState('')
-  const [orderKey, setOrderKey] = useState('stars')
-  const [categories, setCategories] = useState([])
-  const [tags, setTags] = useState([])
-  const [duration, setDuration] = useState('2000-01-01 3000-01-01')
+}): JSX.Element => {
+  const router = useRouter()
+  if (!router.isReady) return <></>
+  else
+    return (
+      <Main
+        posts={posts}
+        allCategories={allCategories}
+        allTags={allTags}
+      />
+    )
+}
+
+function Main({
+  posts,
+  allCategories,
+  allTags,
+}: {
+  posts: Post[]
+  allCategories: string[]
+  allTags: string[]
+}): JSX.Element {
+  const router = useRouter()
+  const query = router.query
+
+  const [freeWords, setFreeWords] = useState(
+    query.freeWords ? (query.freeWords as string) : ''
+  )
+  const [categories, setCategories] = useState(
+    query.categories ? (query.categories as string).split(',') : []
+  )
+  const [tags, setTags] = useState(
+    query.tags ? (query.tags as string).split(',') : []
+  )
+  const [duration, setDuration] = useState(
+    query.duration
+      ? (query.duration as string)
+      : '2000-01-01 3000-01-01'
+  )
+  const [orderKey, setOrderKey] = useState(
+    query.orderKey ? (query.orderKey as string) : 'stars'
+  )
 
   function changeFreeWords(e: ChangeEvent<HTMLInputElement>) {
     setFreeWords(e.target.value)
-  }
-
-  function changeOrderKey(e: ChangeEvent<HTMLSelectElement>) {
-    setOrderKey(e.target.value)
+    updateQuery(e.target.value, categories, tags, duration, orderKey)
   }
 
   function changeCategories(e: ChangeEvent<HTMLInputElement>) {
@@ -55,6 +89,7 @@ export default ({
         (item) => item != e.target.value
       )
     setCategories(tmpCategories)
+    updateQuery(freeWords, tmpCategories, tags, duration, orderKey)
   }
 
   function changeTags(e: ChangeEvent<HTMLInputElement>) {
@@ -62,10 +97,46 @@ export default ({
     if (e.target.checked) tmpTags.push(e.target.value)
     else tmpTags = tmpTags.filter((item) => item != e.target.value)
     setTags(tmpTags)
+    updateQuery(freeWords, categories, tmpTags, duration, orderKey)
   }
 
   function changeDuration(e: ChangeEvent<HTMLSelectElement>) {
     setDuration(e.target.value)
+    updateQuery(freeWords, categories, tags, e.target.value, orderKey)
+  }
+
+  function changeOrderKey(e: ChangeEvent<HTMLSelectElement>) {
+    setOrderKey(e.target.value)
+    updateQuery(freeWords, categories, tags, duration, e.target.value)
+  }
+
+  function makeQuery() {
+    return {
+      freeWords: freeWords,
+      categories: categories.join(','),
+      tags: tags.join(','),
+      duration: duration,
+      orderKey: orderKey,
+    }
+  }
+
+  function updateQuery(
+    freeWords,
+    categories,
+    tags,
+    duration,
+    orderKey
+  ) {
+    /*router.push({
+      pathname: '/',
+      query: {
+        freeWords: freeWords,
+        categories: categories.join(','),
+        tags: tags.join(','),
+        duration: duration,
+        orderKey: orderKey,
+      },
+    })*/
   }
 
   const searchedPosts = posts.filter((post) => {
@@ -156,6 +227,7 @@ export default ({
                 id='inputFreeWords'
                 onChange={(e) => changeFreeWords(e)}
                 className={styles.plainText}
+                defaultValue={freeWords}
               ></input>
             </div>
           </div>
@@ -171,7 +243,7 @@ export default ({
                         id={`inputCategory_${category}`}
                         value={category}
                         onChange={(e) => changeCategories(e)}
-                        defaultChecked={false}
+                        defaultChecked={categories.includes(category)}
                         className={styles.checkBox}
                       />
                       <span className={styles.dummyCheckBox}></span>
@@ -196,7 +268,7 @@ export default ({
                         id={`inputTag_${tag}`}
                         value={tag}
                         onChange={(e) => changeTags(e)}
-                        defaultChecked={false}
+                        defaultChecked={tags.includes(tag)}
                         className={styles.checkBox}
                       />
                       <span className={styles.dummyCheckBox}></span>
@@ -212,7 +284,7 @@ export default ({
             <div className={styles.colRight}>
               <select
                 id='selectDuration'
-                defaultValue='2000-01-01 3000-01-01'
+                defaultValue={duration}
                 onChange={(e) => changeDuration(e)}
                 className={styles.select}
               >
@@ -230,7 +302,7 @@ export default ({
         <div className={styles.order}>
           <select
             id='selectOrderKey'
-            defaultValue='star'
+            defaultValue={orderKey}
             onChange={(e) => changeOrderKey(e)}
             className={styles.select}
           >
@@ -241,7 +313,13 @@ export default ({
         </div>
         <div className={styles.posts}>
           {sortedPost.map((post) => {
-            return <PostCard key={post.postId} post={post} />
+            return (
+              <PostCard
+                key={post.postId}
+                post={post}
+                query={makeQuery()}
+              />
+            )
           })}
         </div>
       </div>

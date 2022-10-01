@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { Post, getAllPostIds, getPost } from '../../lib/posts'
 import { renderDuration, renderTime } from '../../lib/time'
 import styles from '../../components/post.module.css'
@@ -23,6 +24,9 @@ export async function getStaticProps({ params }) {
 }
 
 export default ({ post }: { post: Post }) => {
+  const router = useRouter()
+  const query = router.query
+
   return (
     <div>
       <Head>
@@ -33,7 +37,9 @@ export default ({ post }: { post: Post }) => {
         <Link href='/'>サーチできるポートフォリオ「幸」</Link>
       </div>
       <div className={styles.backNav}>
-        <Link href='/'>← 検索画面に戻る</Link>
+        <Link href={{ pathname: '/', query: query }}>
+          ← 検索画面に戻る
+        </Link>
       </div>
       <article className={styles.container}>
         <h1 className={styles.title}>{post.title}</h1>
