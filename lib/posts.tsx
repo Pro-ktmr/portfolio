@@ -24,8 +24,8 @@ export interface Post {
 
 export function getAllCategories() {
   return [
-    '研究',
     '学業',
+    '研究',
     'コンテスト',
     '社会貢献活動',
     'イベント参加',
