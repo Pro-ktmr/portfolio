@@ -19,4 +19,6 @@ updated_at: '2022-10-01'
 - 少人数指導に従事するチューターの監督
 - 参加者との連絡
 
+講座の様子は情報オリンピックの [PR 誌](https://www.ioi-jp.org/documents/newsletter/NewsletterNo30.pdf)でも特集されています．
+
 ![集合写真](https://www.ioi-jp.org/intro/group-photo.png)

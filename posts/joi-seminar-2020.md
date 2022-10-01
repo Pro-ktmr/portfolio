@@ -15,4 +15,6 @@ updated_at: '2022-10-01'
 
 「[JOI 夏季セミナー 2020](https://www.ioi-jp.org/seminar/2020/summer-semi.html)」のチューターリーダーを務めました．『簡潔データ構造』の輪講グループの指導や，全体の運営を行いました．
 
+情報オリンピックの [PR 誌](https://www.ioi-jp.org/documents/newsletter/NewsletterNo29.pdf)でも特集されています．
+
 ![集合写真](https://www.ioi-jp.org/seminar/2020/gallery/img/lecture14.jpg)
