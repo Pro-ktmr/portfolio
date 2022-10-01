@@ -18,7 +18,7 @@ export default ({
       href={{ pathname: `/posts/${post.postId}`, query: query }}
       key={post.postId}
     >
-      <a className={styles.outer} id={post.postId}>
+      <a className={styles.outer}>
         <div className={styles.card}>
           <div className={styles.eye_catch}>
             <div className={styles.altCategory}>{post.category}</div>

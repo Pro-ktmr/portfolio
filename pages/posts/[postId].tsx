@@ -38,13 +38,6 @@ export default ({ postId, post }: { postId: string; post: Post }) => {
       <div className={styles.topNav}>
         <Link href='/'>サーチできるポートフォリオ「幸」</Link>
       </div>
-      <div className={styles.backNav}>
-        <Link
-          href={{ pathname: '/', hash: `#${postId}`, query: query }}
-        >
-          ← 検索画面に戻る
-        </Link>
-      </div>
       <article className={styles.container}>
         <h1 className={styles.title}>{post.title}</h1>
         <div className={styles.status}>
