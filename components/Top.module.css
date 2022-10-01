@@ -19,7 +19,25 @@
 .satch {
   display: block;
   font-size: 5rem;
-  margin-top: 1.6rem;
+  margin-top: 4.6rem;
+}
+
+.satch rt {
+  display: none;
+}
+
+.satch ruby {
+  position: relative;
+}
+
+.satch ruby[data-ruby]::before {
+  content: attr(data-ruby);
+  position: absolute;
+  left: -2em;
+  top: -0.5em;
+  right: -2em;
+  text-align: center;
+  font-size: 0.4em;
 }
 
 .name {

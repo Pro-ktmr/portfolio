@@ -8,7 +8,7 @@ export default () => {
         <span className={styles.nobreak}>ポートフォリオ</span>
         <span className={styles.satch}>
           「
-          <ruby>
+          <ruby data-ruby='さち'>
             幸<rt>さち</rt>
           </ruby>
           」
