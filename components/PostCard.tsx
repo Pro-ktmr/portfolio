@@ -84,7 +84,7 @@ export function CategoryAndTags({
       <span className={`${styles.badge} ${styles.category}`}>
         {category}
       </span>
-      {tags.map((tag) => {
+      {tags.sort().map((tag) => {
         return (
           <span className={`${styles.badge} ${styles.tag}`} key={tag}>
             {tag}

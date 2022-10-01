@@ -23,7 +23,13 @@ export interface Post {
 }
 
 export function getAllCategories() {
-  return ['研究', '学業', '社会貢献活動', 'イベント参加']
+  return [
+    '研究',
+    '学業',
+    'コンテスト',
+    '社会貢献活動',
+    'イベント参加',
+  ]
 }
 
 export async function getAllTags() {
