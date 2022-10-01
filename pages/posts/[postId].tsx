@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import Ga from '../../components/ga'
 import { Post, getAllPostIds, getPost } from '../../lib/posts'
 import { renderDuration, renderTime } from '../../lib/time'
 import styles from '../../components/post.module.css'
@@ -35,6 +36,7 @@ export default ({ postId, post }: { postId: string; post: Post }) => {
         <title>{post.title}｜サーチできるポートフォリオ「幸」</title>
         <meta name='description' content={post.description} />
       </Head>
+      <Ga />
       <div className={styles.topNav}>
         <Link href='/'>
           <a>

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useState, ChangeEvent } from 'react'
+import Ga from '../components/ga'
 import {
   Post,
   getAllPosts,
@@ -212,6 +213,7 @@ function Main({
           content='実績や参加させていただいたイベントなどが多くなりすぎたため，検索して管理できるシステムを構築しました．'
         />
       </Head>
+      <Ga />
       <Top />
       <div className={styles.container}>
         <div className={styles.searchBox}>
