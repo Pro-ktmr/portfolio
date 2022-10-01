@@ -6,7 +6,7 @@ export default () => {
       <h1>
         <span className={styles.nobreak}>サーチできる</span>
         <span className={styles.nobreak}>ポートフォリオ</span>
-        <span className={styles.satch}>
+        <span className={styles.sachi}>
           「
           <ruby data-ruby='さち'>
             幸<rt>さち</rt>

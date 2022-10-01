@@ -16,21 +16,21 @@
   white-space: nowrap;
 }
 
-.satch {
+.sachi {
   display: block;
   font-size: 5rem;
   margin-top: 4.6rem;
 }
 
-.satch rt {
+.sachi rt {
   display: none;
 }
 
-.satch ruby {
+.sachi ruby {
   position: relative;
 }
 
-.satch ruby[data-ruby]::before {
+.sachi ruby[data-ruby]::before {
   content: attr(data-ruby);
   position: absolute;
   left: -2em;
