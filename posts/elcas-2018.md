@@ -8,12 +8,12 @@ beginning_time: '2018-10'
 ending_time: '2019-01'
 eye_catch: 'https://www.kyoto-u.ac.jp/sites/default/files/embed/jaadmissionsevents_newsdepartmentkodai-renkei-nyushi-centernews2018images180704_1elcas-flyer_web.jpg'
 created_at: '2022-09-30'
-updated_at: '2022-09-30'
+updated_at: '2022-10-01'
 ---
 
 ELCAS (エルキャス) は京都大学が高校生向けに実施する人材育成プログラムです．グループに分かれてそれぞれの研究室で実験や演習に取り組みます．2018 年度の案内が[京都大学の Web サイトで公開](https://www.kyoto-u.ac.jp/sites/default/files/embed/jaadmissionsevents_newsdepartmentkodai-renkei-nyushi-centernews2018documents180704_1pamph_2018s.pdf)されています．
 
-選抜を経て ELCAS に参加し，「ロボットシステムの組込みプログラミング」のグループに配属されました．このグループについて，上記案内では次のように紹介されています．プログラムは次の通りです．
+選抜を経て ELCAS 2018 (11 期生) に参加し，「ロボットシステムの組込みプログラミング」のグループに配属されました．このグループについて，上記案内では次のように紹介されています．プログラムは次の通りです．
 
 | 日程        | 内容                                             |
 | :---------- | :----------------------------------------------- |

@@ -8,12 +8,12 @@ beginning_time: '2017-09'
 ending_time: '2018-02'
 eye_catch: 'https://www.kyoto-u.ac.jp/sites/default/files/embed/jaadmissionsevents_newsdepartmentgakusainews2017images170705_101.jpg'
 created_at: '2022-09-30'
-updated_at: '2022-09-30'
+updated_at: '2022-10-01'
 ---
 
 ELCAS (エルキャス) は京都大学が高校生向けに実施する人材育成プログラムです．グループに分かれてそれぞれの研究室で実験や演習に取り組みます．2017 年度の案内が[京都大学の Web サイトで公開](https://www.kyoto-u.ac.jp/sites/default/files/embed/jaadmissionsevents_newsdepartmentgakusainews2017documents170705_101_1.pdf)されています．
 
-選抜を経て ELCAS に参加し，「物質エネルギー化学」のグループに配属されました．プログラムは次の通りです．
+選抜を経て ELCAS 2017 (10 期生) に参加し，「物質エネルギー化学」のグループに配属されました．プログラムは次の通りです．
 
 | 日程        | 内容                                             |
 | :---------- | :----------------------------------------------- |
