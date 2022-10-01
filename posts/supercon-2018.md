@@ -1,5 +1,5 @@
 ---
-title: 'Supercomputing Contest 2018'
+title: 'Supercomputing Contest 2018 本選'
 description: 'Supercomputing Contest 2018 に参加しました．予選を通過し，本選でチーム 2 位 (表彰) を獲得しました．'
 stars: 4
 category: 'コンテスト'

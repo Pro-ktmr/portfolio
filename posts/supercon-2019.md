@@ -1,5 +1,5 @@
 ---
-title: 'Supercomputing Contest 2019'
+title: 'Supercomputing Contest 2019 本選'
 description: 'Supercomputing Contest 2019 に参加しました．予選を通過し，本選でチーム 7 位を獲得しました．'
 stars: 3
 category: 'コンテスト'
