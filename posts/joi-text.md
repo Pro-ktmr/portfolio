@@ -3,8 +3,8 @@ title: '『JOI 公式テキスト　Python で問題解決　情報オリンピ�
 description: '拙著『JOI 公式テキスト　Python で問題解決　情報オリンピックに出てみよう』が出版されました．'
 stars: 4
 category: '社会貢献活動'
-tags: ['Python']
-beginning_time: '2022-08-18'
+tags: ['プログラミング', 'Python', 'Web デザイン']
+beginning_time: '2022-08-15'
 ending_time: '2022-08-15'
 eye_catch: 'https://pro-ktmr.github.io/joi-text/img/cover.jpg'
 created_at: '2022-10-01'

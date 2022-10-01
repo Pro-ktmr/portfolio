@@ -27,6 +27,7 @@ export function getAllCategories() {
     '学業',
     '研究',
     '職歴',
+    '開発物',
     'コンテスト',
     '社会貢献活動',
     'イベント参加',

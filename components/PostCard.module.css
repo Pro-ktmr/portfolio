@@ -2,7 +2,6 @@
   display: block;
   text-decoration: none;
   max-width: 60rem;
-  padding: 1rem 0;
 }
 
 .card {
@@ -13,6 +12,7 @@
   font-size: 1rem;
   line-height: 2rem;
   overflow: hidden;
+  margin: 2rem 0;
 }
 
 .card:hover {

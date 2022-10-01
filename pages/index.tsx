@@ -164,7 +164,9 @@ function Main({
     )
     const searched_ending_time = parseAsDate(duration.split(' ')[1])
     res &&=
-      searched_beginning_time <= parseAsDate(post.ending_time) &&
+      (post.ending_time
+        ? searched_beginning_time <= parseAsDate(post.ending_time)
+        : true) &&
       parseAsDate(post.beginning_time) <= searched_ending_time
 
     return res
