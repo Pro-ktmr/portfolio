@@ -6,7 +6,7 @@ category: 'コンテスト'
 tags: []
 beginning_time: '2018-10-21'
 ending_time: '2018-10-21'
-eye_catch: 'https://koushien.jst.go.jp/koushien/img/shared/logo.jpg'
+eye_catch: 'https://www.jst.go.jp/common/img/jigyou/thumb_koushien.png'
 created_at: '2022-10-01'
 updated_at: '2022-10-01'
 ---

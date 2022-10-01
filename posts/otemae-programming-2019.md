@@ -3,7 +3,7 @@ title: '大手前高校 SSH プログラミング学習会 2019'
 description: '大阪府立大手前高等学校で開催された「SSH プログラミング学習会 2019」を運営しました．教材作成や外部との交渉を担当しました．'
 stars: 2
 category: '社会貢献活動'
-tags: ['プログラミング']
+tags: ['プログラミング', 'C++']
 beginning_time: '2018-08-04'
 ending_time: '2018-08-04'
 eye_catch: 'https://otemae-hs.ed.jp/otemae_wp/wp-content/uploads/2019/06/programming2019-860x525.png'
