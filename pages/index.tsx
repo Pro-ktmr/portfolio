@@ -35,8 +35,8 @@ export default ({
 }) => {
   const [freeWords, setFreeWords] = useState('')
   const [orderKey, setOrderKey] = useState('stars')
-  const [categories, setCategories] = useState(allCategories)
-  const [tags, setTags] = useState(allTags)
+  const [categories, setCategories] = useState([])
+  const [tags, setTags] = useState([])
   const [duration, setDuration] = useState('2000-01-01 3000-01-01')
 
   function changeFreeWords(e: ChangeEvent<HTMLInputElement>) {
@@ -84,12 +84,13 @@ export default ({
     }
 
     // カテゴリ
-    res &&= categories.includes(post.category)
+    res &&=
+      categories.includes(post.category) || categories.length == 0
 
     // タグ
     res &&=
       post.tags.map((tag) => tags.includes(tag)).includes(true) ||
-      post.tags.length == 0
+      tags.length == 0
 
     // 期間
     const searched_beginning_time = parseAsDate(
@@ -170,7 +171,7 @@ export default ({
                         id={`inputCategory_${category}`}
                         value={category}
                         onChange={(e) => changeCategories(e)}
-                        defaultChecked={true}
+                        defaultChecked={false}
                         className={styles.checkBox}
                       />
                       <span className={styles.dummyCheckBox}></span>
@@ -195,7 +196,7 @@ export default ({
                         id={`inputTag_${tag}`}
                         value={tag}
                         onChange={(e) => changeTags(e)}
-                        defaultChecked={true}
+                        defaultChecked={false}
                         className={styles.checkBox}
                       />
                       <span className={styles.dummyCheckBox}></span>
