@@ -6,10 +6,12 @@ category: '開発物'
 tags: ['JavaScript']
 beginning_time: '2022-01'
 ending_time: null
-eye_catch: null
+eye_catch: 'https://pro-ktmr.github.io/pytry/ogp.png'
 created_at: '2022-10-01'
-updated_at: '2022-10-01'
+updated_at: '2022-10-02'
 ---
+
+![PyTry のスクリーンショット](https://pro-ktmr.github.io/pytry/ogp.png)
 
 [PyTry (パイトライ)](https://pro-ktmr.github.io/pytry/) は初心者のための Python 開発環境です．初心者の学習を支援する様々な機能を搭載しています．
 
