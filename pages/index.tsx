@@ -12,6 +12,7 @@ import { parseAsDate } from '../lib/time'
 import Top from '../components/Top'
 import PostCard from '../components/PostCard'
 import styles from '../components/index.module.css'
+import path from 'path'
 
 export async function getStaticProps() {
   const posts = await getAllPosts()
@@ -210,8 +211,32 @@ function Main({
         <title>サーチできるポートフォリオ「幸」</title>
         <meta
           name='description'
-          content='実績や参加させていただいたイベントなどが多くなりすぎたため，検索して管理できるシステムを構築しました．'
+          content='自分を作ってくれた様々な出来事をありのままに記録していきたい．だから，すべてまとめて管理できるシステムを作ってしまいました．'
         />
+        <meta property='og:url' content={process.env.deployURL} />
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:title'
+          content='サーチできるポートフォリオ「幸」'
+        />
+        <meta
+          property='og:description'
+          content='自分を作ってくれた様々な出来事をありのままに記録していきたい．だから，すべてまとめて管理できるシステムを作ってしまいました．'
+        />
+        <meta
+          property='og:site_name'
+          content='サーチできるポートフォリオ「幸」'
+        />
+        <meta
+          property='og:image'
+          content={path.join(
+            process.env.deployURL,
+            'public/images/ogp.png'
+          )}
+        />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:site' content='@Pro_ktmr' />
+        <meta name='twitter:creator' content='@Pro_ktmr' />
       </Head>
       <Ga />
       <Top />

@@ -35,6 +35,26 @@ export default ({ postId, post }: { postId: string; post: Post }) => {
       <Head>
         <title>{post.title}｜サーチできるポートフォリオ「幸」</title>
         <meta name='description' content={post.description} />
+        <meta name='description' content={post.description} />
+        <meta property='og:url' content={process.env.deployURL} />
+        <meta property='og:type' content='website' />
+        <meta
+          property='og:title'
+          content={post.title + '｜サーチできるポートフォリオ「幸」'}
+        />
+        <meta property='og:description' content={post.description} />
+        <meta
+          property='og:site_name'
+          content='サーチできるポートフォリオ「幸」'
+        />
+        {post.eye_catch ? (
+          <meta property='og:image' content={post.eye_catch} />
+        ) : (
+          <></>
+        )}
+        <meta name='twitter:card' content='summary' />
+        <meta name='twitter:site' content='@Pro_ktmr' />
+        <meta name='twitter:creator' content='@Pro_ktmr' />
       </Head>
       <Ga />
       <div className={styles.topNav}>
