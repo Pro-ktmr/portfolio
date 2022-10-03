@@ -229,10 +229,7 @@ function Main({
         />
         <meta
           property='og:image'
-          content={path.join(
-            process.env.deployURL,
-            'public/images/ogp.png'
-          )}
+          content={path.join(process.env.deployURL, 'images/ogp.png')}
         />
         <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:site' content='@Pro_ktmr' />
