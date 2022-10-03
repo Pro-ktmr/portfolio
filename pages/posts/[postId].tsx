@@ -6,6 +6,7 @@ import { Post, getAllPostIds, getPost } from '../../lib/posts'
 import { renderDuration, renderTime } from '../../lib/time'
 import styles from '../../components/post.module.css'
 import { Stars, CategoryAndTags } from '../../components/PostCard'
+import path from 'path'
 
 export async function getStaticPaths() {
   const paths = getAllPostIds()
@@ -36,7 +37,10 @@ export default ({ postId, post }: { postId: string; post: Post }) => {
         <title>{post.title}｜サーチできるポートフォリオ「幸」</title>
         <meta name='description' content={post.description} />
         <meta name='description' content={post.description} />
-        <meta property='og:url' content={process.env.deployURL} />
+        <meta
+          property='og:url'
+          content={path.join(process.env.deployURL, 'posts', postId)}
+        />
         <meta property='og:type' content='website' />
         <meta
           property='og:title'
