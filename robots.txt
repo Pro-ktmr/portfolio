@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://pro-ktmr.github.io/portfolio/
+
+# Sitemaps
+Sitemap: https://pro-ktmr.github.io/portfolio/sitemap.xml
