@@ -213,6 +213,7 @@ function Main({
           name='description'
           content='自分を作ってくれた様々な出来事をありのままに記録していきたい．だから，すべてまとめて管理できるシステムを作ってしまいました．'
         />
+        <link rel='icon' href='./images/favicon.ico'></link>
         <meta property='og:url' content={process.env.deployURL} />
         <meta property='og:type' content='website' />
         <meta

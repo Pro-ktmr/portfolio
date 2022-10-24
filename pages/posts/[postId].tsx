@@ -36,7 +36,7 @@ export default ({ postId, post }: { postId: string; post: Post }) => {
       <Head>
         <title>{post.title}｜サーチできるポートフォリオ「幸」</title>
         <meta name='description' content={post.description} />
-        <meta name='description' content={post.description} />
+        <link rel='icon' href='../images/favicon.ico'></link>
         <meta
           property='og:url'
           content={path.join(process.env.deployURL, 'posts', postId)}
