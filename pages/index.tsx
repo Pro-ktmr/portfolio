@@ -11,7 +11,7 @@ import {
 import { parseAsDate } from '../lib/time'
 import Top from '../components/Top'
 import PostCard from '../components/PostCard'
-import styles from '../components/index.module.css'
+import styles from '../styles/index.module.css'
 import path from 'path'
 
 export async function getStaticProps() {

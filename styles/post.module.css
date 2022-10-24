@@ -125,20 +125,3 @@
 .postInfo .row .colRight {
   display: inline-block;
 }
-
-.backNav {
-  max-width: 60rem;
-  margin: 2rem auto;
-  font-size: 1.2rem;
-  padding: 0 1rem;
-}
-
-.backNav a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-
-.backNav a:hover {
-  text-decoration: none;
-  color: #888888;
-}

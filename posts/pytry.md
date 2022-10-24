@@ -6,7 +6,7 @@ category: '開発物'
 tags: ['JavaScript']
 beginning_time: '2022-01'
 ending_time: null
-eye_catch: 'https://pro-ktmr.github.io/pytry/ogp.png'
+eye_catch: 'https://pro-ktmr.github.io/pytry/img/ogp.png'
 created_at: '2022-10-01'
 updated_at: '2022-10-02'
 ---

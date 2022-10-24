@@ -4,8 +4,11 @@ import { useRouter } from 'next/router'
 import Ga from '../../components/ga'
 import { Post, getAllPostIds, getPost } from '../../lib/posts'
 import { renderDuration, renderTime } from '../../lib/time'
-import styles from '../../components/post.module.css'
-import { Stars, CategoryAndTags } from '../../components/PostCard'
+import styles from '../../styles/post.module.css'
+import {
+  Stars,
+  CategoryAndTagsAnchor,
+} from '../../components/PostCard'
 import path from 'path'
 
 export async function getStaticPaths() {
@@ -79,7 +82,7 @@ export default ({ postId, post }: { postId: string; post: Post }) => {
             </div>
           </div>
           <div className={styles.badges}>
-            <CategoryAndTags
+            <CategoryAndTagsAnchor
               category={post.category}
               tags={post.tags}
             />

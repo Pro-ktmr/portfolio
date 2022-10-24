@@ -93,6 +93,29 @@ export function CategoryAndTags({
 }): JSX.Element {
   return (
     <>
+      <span className={`${styles.badge} ${styles.category}`}>
+        {category}
+      </span>
+      {tags.sort().map((tag) => {
+        return (
+          <span className={`${styles.badge} ${styles.tag}`} key={tag}>
+            {tag}
+          </span>
+        )
+      })}
+    </>
+  )
+}
+
+export function CategoryAndTagsAnchor({
+  category,
+  tags,
+}: {
+  category: string
+  tags: string[]
+}): JSX.Element {
+  return (
+    <>
       <Link
         href={{
           pathname: `/`,
