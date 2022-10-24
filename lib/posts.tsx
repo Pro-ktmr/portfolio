@@ -84,3 +84,35 @@ export async function getAllPosts(): Promise<Post[]> {
   }
   return posts
 }
+
+export async function getRelatedPosts(
+  thisPostId: string
+): Promise<Post[]> {
+  const thisPost = await getPost(thisPostId)
+  const postIds = getAllPostIds()
+  let tuples: {
+    score: number
+    post: Post
+  }[] = []
+  for (const postId of postIds) {
+    if (thisPostId === postId.params.postId) continue
+    const post = await getPost(postId.params.postId)
+
+    let score: number = 0
+    if (thisPost.category === post.category) {
+      score++
+    }
+    for (const tag of thisPost.tags) {
+      if (post.tags.includes(tag)) {
+        score++
+      }
+    }
+
+    tuples.push({ score: score, post: post })
+  }
+  const posts: Post[] = tuples
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 3)
+    .map((tuple) => tuple.post)
+  return posts
+}

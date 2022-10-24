@@ -2,7 +2,12 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import Ga from '../../components/ga'
-import { Post, getAllPostIds, getPost } from '../../lib/posts'
+import {
+  Post,
+  getAllPostIds,
+  getPost,
+  getRelatedPosts,
+} from '../../lib/posts'
 import { renderDuration, renderTime } from '../../lib/time'
 import styles from '../../styles/post.module.css'
 import {
@@ -22,15 +27,25 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const postId = params.postId
   const post = await getPost(postId)
+  const relatedPosts = await getRelatedPosts(postId)
   return {
     props: {
       postId,
       post,
+      relatedPosts,
     },
   }
 }
 
-export default ({ postId, post }: { postId: string; post: Post }) => {
+export default ({
+  postId,
+  post,
+  relatedPosts,
+}: {
+  postId: string
+  post: Post
+  relatedPosts: Post[]
+}) => {
   const router = useRouter()
   const query = router.query
 
@@ -39,7 +54,7 @@ export default ({ postId, post }: { postId: string; post: Post }) => {
       <Head>
         <title>{post.title}｜サーチできるポートフォリオ「幸」</title>
         <meta name='description' content={post.description} />
-        <link rel='icon' href='../images/favicon.ico'></link>
+        <link rel='icon' href='../../images/favicon.ico'></link>
         <meta
           property='og:url'
           content={path.join(process.env.deployURL, 'posts', postId)}
@@ -107,6 +122,18 @@ export default ({ postId, post }: { postId: string; post: Post }) => {
           </div>
         </div>
       </article>
+      <div className={styles.container + ' ' + styles.related}>
+        <div className={styles.relatedTitle}>関連記事</div>
+        <ul className={styles.relatedList}>
+          {relatedPosts.map((post) => (
+            <li>
+              <Link href={'./' + post.postId}>
+                <a>{post.title}</a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   )
 }
