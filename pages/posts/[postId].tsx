@@ -126,7 +126,7 @@ export default ({
         <div className={styles.relatedTitle}>関連記事</div>
         <ul className={styles.relatedList}>
           {relatedPosts.map((post) => (
-            <li>
+            <li key={post.postId}>
               <Link href={'./' + post.postId}>
                 <a>{post.title}</a>
               </Link>

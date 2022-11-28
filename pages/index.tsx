@@ -13,6 +13,7 @@ import Top from '../components/Top'
 import PostCard from '../components/PostCard'
 import styles from '../styles/index.module.css'
 import path from 'path'
+import { stringify } from 'querystring'
 
 export async function getStaticProps() {
   const posts = await getAllPosts()
@@ -79,7 +80,9 @@ function Main({
   )
 
   function changeFreeWords(e: ChangeEvent<HTMLInputElement>) {
-    setFreeWords(e.target.value)
+    let tmpFreeWords = e.target.value
+    setFreeWords(tmpFreeWords)
+    updateQuery(tmpFreeWords, categories, tags, duration, orderKey)
   }
 
   function changeCategories(e: ChangeEvent<HTMLInputElement>) {
@@ -90,6 +93,7 @@ function Main({
         (item) => item != e.target.value
       )
     setCategories(tmpCategories)
+    updateQuery(freeWords, tmpCategories, tags, duration, orderKey)
   }
 
   function changeTags(e: ChangeEvent<HTMLInputElement>) {
@@ -97,14 +101,19 @@ function Main({
     if (e.target.checked) tmpTags.push(e.target.value)
     else tmpTags = tmpTags.filter((item) => item != e.target.value)
     setTags(tmpTags)
+    updateQuery(freeWords, categories, tmpTags, duration, orderKey)
   }
 
   function changeDuration(e: ChangeEvent<HTMLSelectElement>) {
-    setDuration(e.target.value)
+    let tmpDuration = e.target.value
+    setDuration(tmpDuration)
+    updateQuery(freeWords, categories, tags, tmpDuration, orderKey)
   }
 
   function changeOrderKey(e: ChangeEvent<HTMLSelectElement>) {
-    setOrderKey(e.target.value)
+    let tmpOrderKey = e.target.value
+    setOrderKey(tmpOrderKey)
+    updateQuery(freeWords, categories, tags, duration, tmpOrderKey)
   }
 
   function makeQuery() {
@@ -124,16 +133,14 @@ function Main({
     duration,
     orderKey
   ) {
-    router.push({
-      pathname: '/',
-      query: {
-        freeWords: freeWords,
-        categories: categories.join(','),
-        tags: tags.join(','),
-        duration: duration,
-        orderKey: orderKey,
-      },
-    })
+    const query: { [key: string]: string } = {
+      freeWords: freeWords,
+      categories: categories.join(','),
+      tags: tags.join(','),
+      duration: duration,
+      orderKey: orderKey,
+    }
+    router.replace({ query }, undefined, { scroll: false })
   }
 
   const searchedPosts = posts.filter((post) => {
@@ -247,9 +254,10 @@ function Main({
             <div className={styles.colRight}>
               <input
                 id='inputFreeWords'
-                onChange={(e) => changeFreeWords(e)}
+                onBlur={(e) => changeFreeWords(e)}
                 className={styles.plainText}
                 defaultValue={freeWords}
+                placeholder='フォーカスを解除で確定'
               ></input>
             </div>
           </div>
