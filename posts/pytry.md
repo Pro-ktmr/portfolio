@@ -11,7 +11,7 @@ created_at: '2022-10-01'
 updated_at: '2022-10-02'
 ---
 
-![PyTry のスクリーンショット](https://pro-ktmr.github.io/pytry/ogp.png)
+![PyTry のスクリーンショット](https://pro-ktmr.github.io/pytry/img/ogp.png)
 
 [PyTry (パイトライ)](https://pro-ktmr.github.io/pytry/) は初心者のための Python 開発環境です．初心者の学習を支援する様々な機能を搭載しています．
 
