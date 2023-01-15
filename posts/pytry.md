@@ -5,10 +5,10 @@ stars: 3
 category: '開発物'
 tags: ['JavaScript']
 beginning_time: '2022-01'
-ending_time: null
+ending_time: '2022-01'
 eye_catch: 'https://pro-ktmr.github.io/pytry/img/ogp.png'
 created_at: '2022-10-01'
-updated_at: '2022-10-02'
+updated_at: '2023-01-15'
 ---
 
 ![PyTry のスクリーンショット](https://pro-ktmr.github.io/pytry/img/ogp.png)

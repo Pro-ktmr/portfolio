@@ -5,10 +5,10 @@ stars: 2
 category: '開発物'
 tags: ['Bootstrap', 'JavaScript']
 beginning_time: '2018-05'
-ending_time: null
+ending_time: '2018-05'
 eye_catch: null
 created_at: '2022-10-01'
-updated_at: '2022-10-02'
+updated_at: '2023-01-15'
 ---
 
 [AOJ-PCK](https://pro-ktmr.github.io/aoj-pck/) は AIZU ONLINE JUDGE (AOJ) で解くことのできるパソコン甲子園 (PCK) の過去問のリンク集です．出題当時の配点を掲載している点が特徴的です．

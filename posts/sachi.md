@@ -5,10 +5,10 @@ stars: 4
 category: '開発物'
 tags: ['Next.js', 'TypeScript', 'Web デザイン']
 beginning_time: '2022-09'
-ending_time: null
+ending_time: '2022-09'
 eye_catch: 'https://pro-ktmr.github.io/portfolio/images/ogp.png'
 created_at: '2022-10-01'
-updated_at: '2022-10-02'
+updated_at: '2023-01-15'
 ---
 
 人生にはいくつも分岐点があります．たとえ今は些細なことに見えても，何十年か先の人生に影響を与えることになるかもしれません．ポートフォリオは普通，特にアピールしたい項目だけに絞った方が効果的でしょう．でもそれは何かを無かったことにするようで，自分にはできません．自分を作ってくれた様々な出来事をありのままに記録していきたい．だから，すべてまとめて管理できるシステムを作ってしまいました．
