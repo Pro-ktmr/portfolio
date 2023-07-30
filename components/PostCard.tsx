@@ -95,12 +95,17 @@ export function CategoryAndTags({
     <>
       <span className={`${styles.badge} ${styles.category}`}>
         {category}
-      </span>
+      </span>{' '}
       {tags.sort().map((tag) => {
         return (
-          <span className={`${styles.badge} ${styles.tag}`} key={tag}>
-            {tag}
-          </span>
+          <>
+            <span
+              className={`${styles.badge} ${styles.tag}`}
+              key={tag}
+            >
+              {tag}
+            </span>{' '}
+          </>
         )
       })}
     </>
@@ -128,15 +133,17 @@ export function CategoryAndTagsAnchor({
       </Link>
       {tags.sort().map((tag) => {
         return (
-          <Link
-            href={{
-              pathname: `/`,
-              query: { tags: tag },
-            }}
-            key={tag}
-          >
-            <a className={`${styles.badge} ${styles.tag}`}>{tag}</a>
-          </Link>
+          <>
+            <Link
+              href={{
+                pathname: `/`,
+                query: { tags: tag },
+              }}
+              key={tag}
+            >
+              <a className={`${styles.badge} ${styles.tag}`}>{tag}</a>
+            </Link>{' '}
+          </>
         )
       })}
     </>
