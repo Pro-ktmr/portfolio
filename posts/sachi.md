@@ -3,7 +3,7 @@ title: 'サーチできるポートフォリオ「幸 (さち)」'
 description: 'このポートフォリオについてご紹介します．'
 stars: 4
 category: '開発物'
-tags: ['Next.js', 'JavaScript/TypeScript', 'Web デザイン']
+tags: ['Next.js', 'React', 'JavaScript/TypeScript', 'Web デザイン']
 beginning_time: '2022-09'
 ending_time: '2022-09'
 eye_catch: 'https://pro-ktmr.github.io/portfolio/images/ogp.png'
