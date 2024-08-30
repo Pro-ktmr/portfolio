@@ -8,8 +8,7 @@ tags:
     'インターンシップ',
     'Next.js',
     'React',
-    'TypeScript',
-    'JavaScript',
+    'JavaScript/TypeScript',
     '生成AI',
   ]
 beginning_time: '2024-08-19'

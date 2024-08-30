@@ -3,7 +3,7 @@ title: 'AOJ-PCK'
 description: 'AOJ-PCK は AIZU ONLINE JUDGE (AOJ) で解くことのできるパソコン甲子園 (PCK) の過去問のリンク集です．'
 stars: 2
 category: '開発物'
-tags: ['Bootstrap', 'JavaScript']
+tags: ['Bootstrap', 'JavaScript/TypeScript']
 beginning_time: '2018-05'
 ending_time: '2018-05'
 eye_catch: null

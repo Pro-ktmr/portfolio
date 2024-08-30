@@ -3,7 +3,7 @@ title: 'OJUZ-OI'
 description: 'OJUZ-OI は oj.uz で解くことのできる各種情報オリンピック (JOI/APIO/IOI) の過去問のリンク集です．'
 stars: 2
 category: '開発物'
-tags: ['Vue.js', 'JavaScript']
+tags: ['Vue.js', 'JavaScript/TypeScript']
 beginning_time: '2019-03'
 ending_time: '2019-03'
 eye_catch: null

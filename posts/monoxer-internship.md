@@ -10,8 +10,8 @@ tags:
     'Scala',
     'Python',
     'SQL',
-    'TypeScript',
-    'JavaScript',
+    'JavaScript/TypeScript',
+    'React',
     '自然言語処理',
   ]
 beginning_time: '2023-02-20'

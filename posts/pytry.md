@@ -3,7 +3,7 @@ title: 'PyTry (パイトライ)'
 description: 'PyTry (パイトライ) は初心者のための Python 開発環境です．初心者の学習を支援する様々な機能を搭載しています．'
 stars: 3
 category: '開発物'
-tags: ['JavaScript']
+tags: ['JavaScript/TypeScript']
 beginning_time: '2022-01'
 ending_time: '2022-01'
 eye_catch: 'https://pro-ktmr.github.io/pytry/img/ogp.png'

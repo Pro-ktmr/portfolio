@@ -3,7 +3,8 @@ title: 'プログラミングスクール 講師'
 description: '中高生を主なターゲットとするプログラミングスクールで講師を務めていました．'
 stars: 3
 category: '職歴'
-tags: ['プログラミング', 'Unity', 'C#', 'Python', 'JavaScript']
+tags:
+  ['プログラミング', 'Unity', 'C#', 'Python', 'JavaScript/TypeScript']
 beginning_time: '2022-02'
 ending_time: '2023-06'
 eye_catch: null
