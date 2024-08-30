@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { renderDuration } from '../lib/time'
 import Link from 'next/link'
 import styles from './PostCard.module.css'
+import { Fragment } from 'react'
 
 export default ({
   post,
@@ -133,7 +134,7 @@ export function CategoryAndTagsAnchor({
       </Link>
       {tags.sort().map((tag) => {
         return (
-          <>
+          <Fragment key={tag}>
             <Link
               href={{
                 pathname: `/`,
@@ -143,7 +144,7 @@ export function CategoryAndTagsAnchor({
             >
               <a className={`${styles.badge} ${styles.tag}`}>{tag}</a>
             </Link>{' '}
-          </>
+          </Fragment>
         )
       })}
     </>
