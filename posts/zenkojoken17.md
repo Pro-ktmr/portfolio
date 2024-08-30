@@ -6,7 +6,7 @@ category: '研究'
 tags: ['査読なし', '国内研究会']
 beginning_time: '2024-08-03'
 ending_time: '2024-08-04'
-eye_catch: 'https://pro-ktmr.github.io/portfolio/images/zenkojoken17-1.jpg'
+eye_catch: 'https://pro-ktmr.github.io/portfolio/images/zenkojoken17-1.png'
 created_at: '2024-08-30'
 updated_at: '2024-08-30'
 ---
@@ -19,6 +19,6 @@ updated_at: '2024-08-30'
 
 [ポスターの PDF データを researchmap で公開しています．](https://researchmap.jp/yuki-kitamura/presentations/47323559)
 
-![ポスター1枚目](https://pro-ktmr.github.io/portfolio/images/zenkojoken17-1.jpg)
+![ポスター1枚目](https://pro-ktmr.github.io/portfolio/images/zenkojoken17-1.png)
 
-![ポスター2枚目](https://pro-ktmr.github.io/portfolio/images/zenkojoken17-2.jpg)
+![ポスター2枚目](https://pro-ktmr.github.io/portfolio/images/zenkojoken17-2.png)
